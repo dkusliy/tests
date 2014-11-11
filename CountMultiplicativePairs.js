@@ -8,23 +8,23 @@ function solution(A, B) {
 
     while(left<right){
       //to avoid rounding errors, use multiplication
-		  C_left = A[left]*scale+B[left];
+        C_left = A[left]*scale+B[left];
 
     	if(C_left>=scale){
 
-			  if(C_left*(A[right]*scale+B[right])>=(C_left+(A[right]*scale+B[right]))*scale){
-  				count+=right-left;
-	  			right--;					
-  			}else{
-	  			left++;							
-		  	}						
+	    if(C_left*(A[right]*scale+B[right])>=(C_left+(A[right]*scale+B[right]))*scale){
+  	        count+=right-left;
+	        right--;					
+  	    }else{
+	  	left++;							
+	    }						
     	}else{
-    		left++;
-		  }
+    	    left++;
+	}
     }
-   	if(count>1000000000)
-		  return 1000000000;
-	  else{
-		  return count;
-	  }
+    if(count>1000000000)
+        return 1000000000;
+    else{
+        return count;
+    }
 }
